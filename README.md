@@ -1,5 +1,7 @@
-# Design-Patterns---ML
-Design Patterns for Machine Learning
+## TODO
+* Distributed Patterns: good tutorial here https://huggingface.co/docs/transformers/parallelism
+* Factory Patterns : https://refactoring.guru/design-patterns/factory-method
+* Composite Patterns : https://refactoring.guru/design-patterns/composite
 
 # Machine Learning Design patterns
 
@@ -453,11 +455,3 @@ class AdamOptimizer(Optimizer):
     def step(self, beta_1 : float, beta_2 : float, epsilon : float):
         # Out of core Adam implementation here
 ```
-
-
-## TODO
-* Autograd - https://marksaroufim.medium.com/automatic-differentiation-step-by-step-24240f97a6e6 (Maybe I need to update this tutorial with some python code)
-* Matrix Multiplication
-    * http://supertech.csail.mit.edu/papers/Prokop99.pdf
-    * https://github.com/mitmath/18335/blob/spring21/notes/oblivious-matmul.pdf
-* Distributed patterns: good tutorial here https://huggingface.co/docs/transformers/parallelism

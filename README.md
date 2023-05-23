@@ -1,9 +1,9 @@
 ## TODO
 * Distributed Patterns: good tutorial here https://huggingface.co/docs/transformers/parallelism
-* Factory Patterns : https://refactoring.guru/design-patterns/factory-method
 * Composite Patterns : https://refactoring.guru/design-patterns/composite
 
 # Machine Learning Design patterns
+
 
 ## Pipeline
 
@@ -455,3 +455,50 @@ class AdamOptimizer(Optimizer):
     def step(self, beta_1 : float, beta_2 : float, epsilon : float):
         # Out of core Adam implementation here
 ```
+
+## [Factory Pattern](https://refactoring.guru/design-patterns/factory-method)
+Factory patterns centralizes the object creation without actually exposing the creation logic to the client or user. And it is absolutely fine to create more than one factory method but each factory method should logically group the similar objects.
+
+To simplify an object creation we can define a **base factory** via an abstract class. Then, create new factory by subclassing it and provide our new implementation.
+
+PyTorch's [Dataset](https://pytorch.org/docs/stable/data.html#torch.utils.data.Dataset) is one example. 
+
+```python
+class CreateDataset(torch.utils.data.Dataset):
+    def __init__(self, graph_data):
+        self.graph_data = graph_data
+    
+    def __len__(self):
+        return len(self.graph_data)
+        
+    def __getitem__(self,index):
+        return self.graph_data[index]
+        
+    ## some more function 
+    
+```
+
+Another example of factory pattern can be **AutoML**(Automated Machine Learning) framework. It can make use of factory design patterns for creating and managing different ml models and pipelines. One benefit of this is client won't be aware of code implementation.
+
+```python
+class AutoML:
+    @staticmethod
+    def create_model(model_type):
+        if model_type == 'linear_regression':
+            return LinearRegressionModel()
+        elif model_type == 'random_forest':
+            return RandomForestModel()
+        elif model_type == 'xgboost':
+            return XGBoostModel()
+        else:
+            raise ValueError("Invalid model type")
+        
+# AutoML Pipeline
+model_type = 'random_forest'
+model = AutoML.create_model(model_type)
+model.preprocess_data()
+model.train_model()
+model.evaluate_model()
+
+```
+

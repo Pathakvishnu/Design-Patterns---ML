@@ -4,6 +4,10 @@
 
 # Machine Learning Design patterns
 
+# Table of Contents
+1. [Pipeline](#Pipeline)
+2. [Factory Design Pattern](#Factory Pattern)
+
 
 ## Pipeline
 

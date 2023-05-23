@@ -6,7 +6,7 @@
 
 # Table of Contents
 1. [Pipeline](#Pipeline)
-2. [Factory Pattern](#Factory Pattern)
+2. [Workflow](#Workflow)
 
 
 ## Pipeline

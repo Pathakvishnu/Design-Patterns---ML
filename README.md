@@ -525,7 +525,7 @@ class MLPipelineBuilder:
     def set_feature_engineering_technique(self, engineering_technique):
         self.pipeline.feature_engineering = engineering_technique
         
-    and so on set other methods also like model_selection, tuning etc.
+    # and so on set other methods also like model_selection, tuning etc.
     
     def build(self):
         return self.pipeline
@@ -537,8 +537,8 @@ class MLPipeline:
         self.feature_engineering = None
         self.hyperparameter_tuning = None
         self.model_selection = None
-        ...
-        you can add more of the functionalities based on your requirement.
+        # ...
+        # you can add more of the functionalities based on your requirement.
         
     def execute(self,dataset):
         cleaned_data = self.data_preprocessing(dataset)
@@ -550,7 +550,7 @@ class MLPipeline:
 builder = MLPipelineBuilder()
 builder.set_preprocessing_method(some preprocessing method)
 builder.set_feature_engineering_technique(some feature engineering technique)
-... so on
+# ... so on
 
 model = builder.build()
 trained_model = model.execute(dataset)

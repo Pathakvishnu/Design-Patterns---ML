@@ -506,3 +506,54 @@ model.evaluate_model()
 
 ```
 
+## Builder Pattern
+
+Builder design pattern is also a creational design pattern. It is commonly used for creation of complex objects step by step. It seperates the construction of object with it's representation.
+
+In context of machine learning, it can be used in constructing ml models with different components and parameters. Let's take an example of AutoML, it aim to automate the process by selecting and optimzing ml models, as well as feature engineering and preprocessing steps.
+
+Here, Builder Pattern can be used to create a flexible and configurable pipelines in AutoML.
+
+```python
+class MLPipelineBuilder:
+    def __init__(self):
+        self.pipeline = MLPipeline()
+    
+    def set_preprocessing_method(self, preprocessing_method):
+        self.pipeline.data_preprocessing = preprocessing_method
+    
+    def set_feature_engineering_technique(self, engineering_technique):
+        self.pipeline.feature_engineering = engineering_technique
+        
+    and so on set other methods also like model_selection, tuning etc.
+    
+    def build(self):
+        return self.pipeline
+    
+        
+class MLPipeline:
+    def __init__(self):
+        self.data_preprocessing = None
+        self.feature_engineering = None
+        self.hyperparameter_tuning = None
+        self.model_selection = None
+        ...
+        you can add more of the functionalities based on your requirement.
+        
+    def execute(self,dataset):
+        cleaned_data = self.data_preprocessing(dataset)
+        updated_features = self.feature_engineering(cleaned_data)
+        best_model = self.model_selection(updated_features) 
+        optimized_model = self.hyperparameter_tuning(best_model)
+
+
+builder = MLPipelineBuilder()
+builder.set_preprocessing_method(some preprocessing method)
+builder.set_feature_engineering_technique(some feature engineering technique)
+... so on
+
+model = builder.build()
+trained_model = model.execute(dataset)
+```
+
+Still searching of some more usecases of builder pattern in machine learning. Will keep updating this post.

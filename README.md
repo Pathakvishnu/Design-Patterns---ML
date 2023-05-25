@@ -8,7 +8,7 @@
 1. [Pipeline](#Pipeline)
 2. [Workflow](#Workflow)
 3. [Function as Data](#Function as data)
-4. [Iterator Design Pattern](#Iterator design pattern)
+4. [Iterator Design Pattern](#iterator)
 5. [Observer Design Pattern](#Callbacks)
 
 ## Pipeline
@@ -142,7 +142,7 @@ model = myModel()
 pickle.dumps(model)
 ```
 
-## Iterator design pattern
+## Iterator design pattern <a name="iterator"></a>
 
 ```python
 for i in range(10):

@@ -1,6 +1,7 @@
 ## TODO
 * Distributed Patterns: good tutorial here https://huggingface.co/docs/transformers/parallelism
 * Composite Patterns : https://refactoring.guru/design-patterns/composite
+* Adapter Patterns
 
 # Machine Learning Design patterns
 

@@ -7,9 +7,12 @@
 # Table of Contents
 1. [Pipeline](#Pipeline)
 2. [Workflow](#Workflow)
-3. [Function as Data](#Function as data)
-4. [Iterator Design Pattern](#iterator)
-5. [Observer Design Pattern](#Callbacks)
+3. [Iterator Design Pattern](#iterator)
+4. [Observer Design Pattern](#Callbacks)
+5. [Strategy Design Pattern](#strategy)
+6. [Decorator Design Pattern](#decorator)
+7. [Factory Design Pattern](#factory)
+8. [Builder Design Pattern](#builder)
 
 ## Pipeline
 
@@ -376,7 +379,7 @@ Remember GPUs aren't that great at doing many small operations because there's a
 
 As another exercise vectorization on CPU is also another technique to eliminate for loops but by operating over chunks of data concurrently. So for example some new newer Intel CPUs will turn matrices into long vectors and do matrix math on them by using a large instruction width AVX512.
 
-## Decorator
+## Decorator<a name="decorator"></a>
 Decorators are a technique to add functionality to a function or class without modifying its code. You may have already heard of or used decorators like `@memoize, @lru_cache, @profile, @step`
 
 As an example let's take a look at how to implement a `@profile` decorator borrowing code from https://medium.com/uncountable-engineering/pythons-line-profiler-32df2b07b290
@@ -430,7 +433,7 @@ Digging through the code a bit more we find that `add_api_route()` whenever a ne
 
 The flipside of decorators is that they can lead you to a monolithic architecture where your infrastructure and deployment is tightly coupled to your implementation, this is generally fine if you're a startup but not so fine if multiple people are contributing code to the same place.
 
-## Strategy Pattern
+## Strategy Pattern <a name="strategy"></a>
 
 The strategy pattern is classic Object Oriented programming and is generally useful when you to set some particular strategy for an object without constraining it too much as a library designer.
 
@@ -462,7 +465,7 @@ class AdamOptimizer(Optimizer):
         # Out of core Adam implementation here
 ```
 
-## [Factory Pattern](https://refactoring.guru/design-patterns/factory-method)
+## [Factory Pattern](https://refactoring.guru/design-patterns/factory-method)<a name="factory"></a>
 Factory patterns centralizes the object creation without actually exposing the creation logic to the client or user. And it is absolutely fine to create more than one factory method but each factory method should logically group the similar objects.
 
 To simplify an object creation we can define a **base factory** via an abstract class. Then, create new factory by subclassing it and provide our new implementation.
@@ -508,7 +511,7 @@ model.evaluate_model()
 
 ```
 
-## Builder Pattern
+## Builder Pattern<a name="builder"></a>
 
 Builder design pattern is also a creational design pattern. It is commonly used for creation of complex objects step by step. It seperates the construction of object with it's representation.
 

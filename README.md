@@ -7,7 +7,9 @@
 # Table of Contents
 1. [Pipeline](#Pipeline)
 2. [Workflow](#Workflow)
-
+3. [Function as Data](#Function as data)
+4. [Iterator Design Pattern](#Iterator design pattern)
+5. [Observer Design Pattern](#Callbacks)
 
 ## Pipeline
 

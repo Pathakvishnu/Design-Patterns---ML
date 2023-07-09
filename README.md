@@ -1,8 +1,9 @@
 ## TODO
 * Distributed Patterns: good tutorial here https://huggingface.co/docs/transformers/parallelism
-* Composite Patterns : https://refactoring.guru/design-patterns/composite
-* Adapter Patterns : https://refactoring.guru/design-patterns/adapter
-* Facade Patterns : https://refactoring.guru/design-patterns/facade
+* Composite Patterns: https://refactoring.guru/design-patterns/composite
+* Adapter Patterns: https://refactoring.guru/design-patterns/adapter
+* Facade Patterns: https://refactoring.guru/design-patterns/facade
+* Dependency Injection Patterns: 
 
 # Machine Learning Design patterns
 
@@ -15,6 +16,7 @@
 6. [Decorator Design Pattern](#decorator)
 7. [Factory Design Pattern](#factory)
 8. [Builder Design Pattern](#builder)
+9. [Dependency Injection Pattern](#dependency_injection)
 
 ## Pipeline
 
@@ -563,4 +565,7 @@ model = builder.build()
 trained_model = model.execute(dataset)
 ```
 
-Still searching of some more usecases of builder pattern in machine learning. Will keep updating this post.
+Still searching for some more usecases of builder patterns in machine learning. I will keep updating this post.
+
+## Dependency Injection Pattern<a name="dependency_injection"></a>
+

@@ -3,7 +3,8 @@
 * Composite Patterns: https://refactoring.guru/design-patterns/composite
 * Adapter Patterns: https://refactoring.guru/design-patterns/adapter
 * Facade Patterns: https://refactoring.guru/design-patterns/facade
-* Dependency Injection Patterns: 
+* Dependency Injection Patterns:
+* [ML-System-Design-Pattern](https://github.com/mercari/ml-system-design-pattern?tab=readme-ov-file)
 
 # Machine Learning Design patterns
 
